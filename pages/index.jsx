@@ -17,14 +17,14 @@ const Homepage = props => {
     
   const { homeContent, rentContent, shareContent, aboutContent, contactContent, vehiclesContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
   return<div className="main overflow-x-hidden">
-          {/* <Head
+          <Head
             title={seo.data.title}
             description={seo.data.default_description}
             keywords={seo.data.default_keywords}
             url={seo.data.default_url}
             ogImage={seo.data.default_image}
           />
-          <NavBar
+          {/* <NavBar
               content={menuContent.data.menu_links} 
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
@@ -70,7 +70,7 @@ const getStaticProps = async ({ params, locale, previewData }) => {
   const locales = await getLocales(client)
   return {
       props: {
-        // seo: await getPrismicData('seo', locale),
+        seo: await getPrismicData('seo', locale),
         // generalInformation: await getPrismicData('general_information', locale),
         // menuContent: await getPrismicData('menu', locale),
         // homeContent: await getPrismicData('home_section',locale),
