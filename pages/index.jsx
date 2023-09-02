@@ -4,6 +4,8 @@ import React from "react";
 import Head from "../components/head";
 import NavBar from "../components/navbar";
 import HomeSection from '../components/sections/homeSection';
+import FooterSection from "../components/sections/footerSection";
+
 
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../prismic-configuration'
@@ -39,28 +41,12 @@ const Homepage = props => {
             bottomText={homeContent.data.bottom_text}
             sloganText={homeContent.data.slogan_text}
           />
-          {/* <RentSection
-            backgroundUrl={rentContent.data.background_image.url}
-            titleText={rentContent.data.title_text}
-            bodyText={rentContent.data.body_text}
+          <FooterSection
+            logo={generalInformation.data.small_logo.url}
+            imageWidth={generalInformation.data.small_logo_width}
+            imageHeight={generalInformation.data.small_logo_height}
           />
-          <CatalogSection
-            vehiclesList={vehiclesContent}
-            bookNowText={generalInformation.data.book_now_text}
-          />
-          <ShareSection
-            backgroundUrl={shareContent.data.background_image.url}
-            titleText={shareContent.data.title_text}
-            bodyText={shareContent.data.body_text}
-          />
-          <AboutSection
-            backgroundUrl={aboutContent.data.background_image.url}
-            titleText={aboutContent.data.title_text}
-            bodyText={aboutContent.data.body_text}
-          />
-          <ContactSection
-            contentContact={contactContent}
-          /> */}
+
           <ConstructionPage/>
         </div>
 }
