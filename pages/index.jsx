@@ -24,14 +24,14 @@ const Homepage = props => {
             url={seo.data.default_url}
             ogImage={seo.data.default_image}
           />
-          {/* <NavBar
+          <NavBar
               content={menuContent.data.menu_links} 
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
               imageHeight={generalInformation.data.small_logo_height}
               locales={locales}
               actualLocale={actualLocale}
-              sloganText={homeContent.data.slogan_text}
+              // sloganText={homeContent.data.slogan_text}
             />
           <HomeSection
             backgroundUrl={homeContent.data.background_image.url}
@@ -39,7 +39,7 @@ const Homepage = props => {
             bottomText={homeContent.data.bottom_text}
             sloganText={homeContent.data.slogan_text}
           />
-          <RentSection
+          {/* <RentSection
             backgroundUrl={rentContent.data.background_image.url}
             titleText={rentContent.data.title_text}
             bodyText={rentContent.data.body_text}
@@ -71,9 +71,9 @@ const getStaticProps = async ({ params, locale, previewData }) => {
   return {
       props: {
         seo: await getPrismicData('seo', locale),
-        // generalInformation: await getPrismicData('general_information', locale),
-        // menuContent: await getPrismicData('menu', locale),
-        // homeContent: await getPrismicData('home_section',locale),
+        generalInformation: await getPrismicData('general_information', locale),
+        menuContent: await getPrismicData('menu', locale),
+        homeContent: await getPrismicData('home_section',locale),
         // rentContent: await getPrismicData('rent_section',locale),
         // shareContent: await getPrismicData('share_section',locale),
         // aboutContent: await getPrismicData('about_section',locale),

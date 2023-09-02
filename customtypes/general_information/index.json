@@ -22,6 +22,30 @@
       "book_now_text": {
         "type": "Text",
         "config": { "label": "Book Now Text", "placeholder": "" }
+      },
+      "facebook_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Facebook Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "instagram_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Instagram Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "whatsapp_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Whatsapp Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }

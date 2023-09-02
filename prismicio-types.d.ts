@@ -51,6 +51,39 @@ interface GeneralInformationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   book_now_text: prismic.KeyTextField;
+
+  /**
+   * Facebook Logo field in *General Information*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: general_information.facebook_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  facebook_logo: prismic.ImageField<never>;
+
+  /**
+   * Instagram Logo field in *General Information*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: general_information.instagram_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  instagram_logo: prismic.ImageField<never>;
+
+  /**
+   * Whatsapp Logo field in *General Information*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: general_information.whatsapp_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  whatsapp_logo: prismic.ImageField<never>;
 }
 
 /**
