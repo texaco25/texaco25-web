@@ -7,7 +7,8 @@ import { PrismicNextLink } from '@prismicio/next'
 const FooterSection = props => {
 
   const { backgroundUrl, topText, bottomText, sloganText, logo, imageHeight, imageWidth} = props
-
+  const wazeTexaco31 = "https://www.waze.com/live-map/directions/texaco-31-%E2%9B%BD-san-pedro-betania-rn25-05-greater(s)-san-pedro?navigate=yes&to=place.w.185991208.1859649935.2839390"
+  const wazeTexaco25 = "https://www.waze.com/live-map/directions/co/valle-del-cauca/cali/estacion-de-servicio-texaco-la-25?navigate=yes&to=place.ChIJ0YbF40OmMI4RohWcnqU7uA8"
   return (
       <div id="footer" className="bg-cover bg-center bg-black shadow-2xl xl:mt-30 mt-20 h-full">
         <div className=" bg-gradient-to-r from-black">
@@ -33,7 +34,7 @@ const FooterSection = props => {
                   Estacion de Servicio Texaco 31
               </div>
               <div className="font-lato-black">
-                  Recta Cali Palmira - San Pedro Valle del Cauca
+                  Doble Calzada Tulua-Buga - San Pedro Valle del Cauca
               </div>
               <div className="mb-5 font-lato-black">
                   Telefono: +57 602 3302243

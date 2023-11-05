@@ -84,6 +84,17 @@ interface GeneralInformationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   whatsapp_logo: prismic.ImageField<never>;
+
+  /**
+   * Texaco Logo field in *General Information*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: general_information.texaco_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  texaco_logo: prismic.ImageField<never>;
 }
 
 /**
@@ -149,6 +160,28 @@ interface HomeSectionDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   slogan_text: prismic.KeyTextField;
+
+  /**
+   * Sub Top Text field in *Home Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_section.sub_top_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_top_text: prismic.KeyTextField;
+
+  /**
+   * Sub Bottom Text field in *Home Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_section.sub_bottom_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_bottom_text: prismic.KeyTextField;
 }
 
 /**

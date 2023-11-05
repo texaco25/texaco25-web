@@ -33,12 +33,15 @@ const Homepage = props => {
               imageHeight={generalInformation.data.small_logo_height}
               locales={locales}
               actualLocale={actualLocale}
+              texasLogo={generalInformation.data.texaco_logo.url}
               // sloganText={homeContent.data.slogan_text}
             />
           <HomeSection
             backgroundUrl={homeContent.data.background_image.url}
             topText={homeContent.data.top_text}
             bottomText={homeContent.data.bottom_text}
+            subTopText={homeContent.data.sub_top_text}
+            subBottomText={homeContent.data.sub_bottom_text}
             sloganText={homeContent.data.slogan_text}
           />
           <FooterSection

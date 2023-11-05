@@ -9,7 +9,7 @@ import { PrismicNextLink } from '@prismicio/next'
 
 const NavBar = props => {
 
-  const { content, logo, imageHeight, imageWidth, locales, actualLocale, customText, sloganText} = props
+  const { content, logo, texasLogo, imageHeight, imageWidth, locales, actualLocale, customText, sloganText} = props
 
   let navBarLinks = []
   const [isOpen, setOpen] = useState(true);
@@ -77,6 +77,11 @@ const NavBar = props => {
             </button>
             <div className={`w-full xl:block xl:w-auto ${isOpen && "hidden"}`} id="mobile-menu">
               <ul className="xl:-translate-y-3 flex flex-col mt-4 xl:flex-row xl:space-x-8 xl:mt-0 xl:text-sm xl:font-medium items-end xl:items-start">
+                <div className="flex">
+                  <PrismicNextLink href="/#home" className="">
+                    <Image className="" src={texasLogo} width={45} height={45} alt="Texaco-Logo"/>
+                  </PrismicNextLink>
+                </div>
                 {navBarLinks}
                 {/* <div className="pl-5 flex flex-row">
                 {locales.map((locale) => (

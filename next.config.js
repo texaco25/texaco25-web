@@ -6,6 +6,7 @@ const nextConfig = async () => {
   const client = prismic.createClient(sm.repositoryName);
 
   const repository = await client.getRepository();
+  console.log(repository)
   const locales = repository.languages.map((lang) => lang.id);
 
   return {

@@ -46,6 +46,10 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "texaco_logo": {
+        "type": "Image",
+        "config": { "label": "Texaco Logo", "constraint": {}, "thumbnails": [] }
       }
     }
   }
