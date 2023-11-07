@@ -39,7 +39,6 @@ const Homepage = props => {
               locales={locales}
               actualLocale={actualLocale}
               texasLogo={generalInformation.data.texaco_logo.url}
-              // sloganText={homeContent.data.slogan_text}
             />
           <HomeSection
             backgroundUrl={homeContent.data.background_image.url}
@@ -49,6 +48,21 @@ const Homepage = props => {
             subBottomText={homeContent.data.sub_bottom_text}
             sloganText={homeContent.data.slogan_text}
           />
+<div className="flex text-center font-bold xl:text-6xl text-2xl xl:mb-20 mb-16">CONOCE LOS BENEFICIOS DE TANQUEAR TU MOTOR CON TEXACO CON TECHRON</div>
+<div className="flex xl:flex-row flex-col justify-between xl:ml-20 xl:mr-20">
+  {benefitsContent.map((beneficio, index) => (
+    <div key={index} className="beneficio-card mb-10">
+      <h2 className="text-center font-bold xl:text-6xl text-4xl mb-2">{beneficio.data.benefit_title}</h2>
+      <div className="flex justify-center mb-2"> {/* Aplicar justify-center aquí */}
+        <div>
+          <img src={beneficio.data.benefit_image.url} alt={beneficio.data.benefit_image.alt} />
+        </div>
+      </div>
+      <p className="text-center	">{beneficio.data.benefit_description}</p>
+    </div>
+  ))}
+</div>
+
 
           <FloatingWhatsApp
                   phoneNumber="+573147965989"
