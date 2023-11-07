@@ -1,6 +1,8 @@
 import React from "react";
 
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
+import YouTube from 'react-youtube';
+
 
 // Components Importations Section 
 import Head from "../components/head";
@@ -22,6 +24,14 @@ const Homepage = props => {
   const { homeContent, benefitsContent, shareContent, aboutContent, contactContent, vehiclesContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
 
   console.log(benefitsContent)
+
+  const youtubeopts = {
+    height: '390',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },}
 
   return<div className="main overflow-x-hidden">
           <Head
@@ -48,6 +58,10 @@ const Homepage = props => {
             subBottomText={homeContent.data.sub_bottom_text}
             sloganText={homeContent.data.slogan_text}
           />
+
+    <YouTube videoId="OlyhGfq8iPE" opts={youtubeopts}/>;
+
+
 <div className="flex text-center font-bold xl:text-6xl text-2xl xl:mb-20 mb-16">CONOCE LOS BENEFICIOS DE TANQUEAR TU MOTOR CON TEXACO CON TECHRON</div>
 <div className="flex xl:flex-row flex-col justify-between xl:ml-20 xl:mr-20">
   {benefitsContent.map((beneficio, index) => (
