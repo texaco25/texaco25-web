@@ -5,6 +5,60 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for Benefit documents
+ */
+interface BenefitDocumentData {
+  /**
+   * Benefit Title field in *Benefit*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: benefit.benefit_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  benefit_title: prismic.KeyTextField;
+
+  /**
+   * Benefit Image field in *Benefit*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: benefit.benefit_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  benefit_image: prismic.ImageField<never>;
+
+  /**
+   * Benefit Description field in *Benefit*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: benefit.benefit_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  benefit_description: prismic.KeyTextField;
+}
+
+/**
+ * Benefit document from Prismic
+ *
+ * - **API ID**: `benefit`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BenefitDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BenefitDocumentData>,
+    "benefit",
+    Lang
+  >;
+
+/**
  * Content for General Information documents
  */
 interface GeneralInformationDocumentData {
@@ -325,11 +379,67 @@ interface SeoDocumentData {
 export type SeoDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<SeoDocumentData>, "seo", Lang>;
 
+/**
+ * Content for Service documents
+ */
+interface ServiceDocumentData {
+  /**
+   * Service Title field in *Service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.service_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_title: prismic.KeyTextField;
+
+  /**
+   * Service Image field in *Service*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.service_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  service_image: prismic.ImageField<never>;
+
+  /**
+   * Service Description field in *Service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.service_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_description: prismic.KeyTextField;
+}
+
+/**
+ * Service document from Prismic
+ *
+ * - **API ID**: `service`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServiceDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ServiceDocumentData>,
+    "service",
+    Lang
+  >;
+
 export type AllDocumentTypes =
+  | BenefitDocument
   | GeneralInformationDocument
   | HomeSectionDocument
   | MenuDocument
-  | SeoDocument;
+  | SeoDocument
+  | ServiceDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -341,6 +451,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BenefitDocument,
+      BenefitDocumentData,
       GeneralInformationDocument,
       GeneralInformationDocumentData,
       HomeSectionDocument,
@@ -349,6 +461,8 @@ declare module "@prismicio/client" {
       MenuDocumentData,
       SeoDocument,
       SeoDocumentData,
+      ServiceDocument,
+      ServiceDocumentData,
       AllDocumentTypes,
     };
   }

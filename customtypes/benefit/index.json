@@ -1,0 +1,28 @@
+{
+  "id": "benefit",
+  "label": "Benefit",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "benefit_title": {
+        "type": "Text",
+        "config": { "label": "Benefit Title", "placeholder": "" }
+      },
+      "benefit_image": {
+        "type": "Image",
+        "config": {
+          "label": "Benefit Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "benefit_description": {
+        "type": "Text",
+        "config": { "label": "Benefit Description", "placeholder": "" }
+      }
+    }
+  }
+}

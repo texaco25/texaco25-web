@@ -1,12 +1,14 @@
 import React from "react";
 
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
+
 // Components Importations Section 
 import Head from "../components/head";
 import NavBar from "../components/navbar";
 import HomeSection from '../components/sections/homeSection';
 import FooterSection from "../components/sections/footerSection";
 
-
+// Prismic Importations Section 
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../prismic-configuration'
 import { getLocales } from "../lib/getLocales";
@@ -17,7 +19,10 @@ import ConstructionPage from './construction';
 
 const Homepage = props => {
     
-  const { homeContent, rentContent, shareContent, aboutContent, contactContent, vehiclesContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
+  const { homeContent, benefitsContent, shareContent, aboutContent, contactContent, vehiclesContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
+
+  console.log(benefitsContent)
+
   return<div className="main overflow-x-hidden">
           <Head
             title={seo.data.title}
@@ -44,13 +49,34 @@ const Homepage = props => {
             subBottomText={homeContent.data.sub_bottom_text}
             sloganText={homeContent.data.slogan_text}
           />
+
+          <FloatingWhatsApp
+                  phoneNumber="+573147965989"
+                  accountName="Camila - Texaco 25"
+                  allowEsc
+                  allowClickAway
+                  notification
+                  notificationSound
+                  chatMessage={
+                    <div>
+                      Hola! 🤝
+                      <br />
+                      Cómo podemos ayudarte?
+                    </div>
+                  }
+                  placeholder="Escribe tu mensaje"
+                  statusMessage="En linea"
+                  avatar={'/static/avatar25.png'}
+          />
+
+
           <FooterSection
             logo={generalInformation.data.small_logo.url}
             imageWidth={generalInformation.data.small_logo_width}
             imageHeight={generalInformation.data.small_logo_height}
           />
 
-          <ConstructionPage/>
+          {/* <ConstructionPage/> */}
         </div>
 }
 
@@ -67,7 +93,7 @@ const getStaticProps = async ({ params, locale, previewData }) => {
         // shareContent: await getPrismicData('share_section',locale),
         // aboutContent: await getPrismicData('about_section',locale),
         // contactContent: await getPrismicData('contact_section',locale),
-        // vehiclesContent: await getPrismicCustomTypeData('vehicle',locale),
+        benefitsContent: await getPrismicCustomTypeData('benefit',locale),
         locales: locales,
         actualLocale: locale
       }
